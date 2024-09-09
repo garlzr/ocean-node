@@ -4,7 +4,8 @@
 echo "请选择功能："
 echo "1) 安装 Ocean Node(注意：请根据提示输入 0x 私钥和地址，设置端口为 8999 9990 9991 9992 9993，并填入 VPS 的 IP 地址)"
 echo "2) 切换 RPC 配置"
-read -p "输入选项 (1 或 2): " option
+echo "3) 查看实时日志"
+read -p "输入选项 (1 2 或 3): " option
 
 # 安装 Ocean Node
 if [ "$option" == "1" ]; then
@@ -48,4 +49,9 @@ if [ "$option" == "2" ]; then
     exit 0
 fi
 
+if [ "$option" == "3" ]; then
+    cd ocean-node
+    docker logs -f ocean-node
+    exit 0
+fi
 echo "无效的选项，请重新运行脚本并选择正确的功能。"
