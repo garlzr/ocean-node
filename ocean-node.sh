@@ -2,7 +2,7 @@
 
 # 功能选择菜单
 echo "请选择功能："
-echo "1) 安装 Ocean Node"
+echo "1) 安装 Ocean Node(请根据提示输入0x私钥和地址，设置端口为 8999 9990 9991 9992 9993，并填入VPS的IP地址)"
 echo "2) 切换 RPC 配置"
 read -p "输入选项 (1 或 2): " option
 
@@ -14,8 +14,7 @@ if [ "$option" == "1" ]; then
     # 执行安装脚本
     ./scripts/ocean-node-quickstart.sh
     docker-compose up -d
-    
-    echo "安装完成。请根据提示输入 0x 私钥和地址，设置端口为 8999 9990 9991 9992 9993，并填入 VPS 的 IP 地址。"
+
     exit 0
 fi
 
